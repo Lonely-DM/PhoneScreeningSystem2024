@@ -14,7 +14,7 @@
 
 7. A new browser window should open with your React application running at http://localhost:3000/  . 'npm start' command launches the development server, which watches for changes to your project files and automatically reloads the browser when changes are detected.
 
-## Learn more about react concepts, and its application for a better understanding of web development on : https://react.dev/learn
+# Learn more about react concepts, and its application for a better understanding of web development on : https://react.dev/learn
 
 ## -------- Access resources, files and code structure for login page --------------
 
