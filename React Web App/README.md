@@ -41,9 +41,10 @@ The development server will start, and you can view the application in your brow
 The project structure looks like this:
 
 ```
-pss-landing-page/
+react-website/
   ├── public/
   └── src/
+  └── package.json
 ```
 
 - **public/**: Contains the static assets and HTML file.
