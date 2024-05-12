@@ -61,11 +61,6 @@
 - **Request Body:** Updated ticket status.
 - **Response:** Updated ticket details.
 
-#### List User's Tickets
-- **Endpoint:** `GET /api/users/{userID}/tickets`
-- **Description:** Get a list of tickets associated with a specific user.
-- **Response:** List of ticket details.
-
 ### Call Handling
 
 #### Record Call
