@@ -12,7 +12,7 @@
    npm run dev
    ```
 4. Or run normally:
-   ``bash
+   ```bash
    npm run serve
    ```
 
