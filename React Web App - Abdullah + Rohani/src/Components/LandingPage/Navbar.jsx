@@ -10,7 +10,7 @@ const Navbar = () => {
       <h1>Phone Screening Portal</h1>
       <ul>
         <a href="/login"><li><button className='purple' type='submit'> Log In</button></li></a>
-        <li><button className='orange' type='submit'> Sign Up</button></li>
+        <a href="/signup"><li><button className='orange' type='submit'> Sign Up</button></li></a>
       </ul>
          
 </div>

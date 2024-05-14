@@ -1,3 +1,4 @@
+
 import React from 'react'
 import './LoginSignin.css'
 import { MdEmail } from "react-icons/md";
@@ -12,7 +13,7 @@ const LoginSignin = () => {
         <form action="">
             <h1>Log In</h1>
             <div className='register-link'>
-                <p>Don't have an account? <a href="#">Create an account</a></p>
+                <p>Don't have an account? <a href="/SignUp">Create an account</a></p>
             </div>
             <div className="input-box">
                 <input type="text" placeholder='Work Email Address' required />

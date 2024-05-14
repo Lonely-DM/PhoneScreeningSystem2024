@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react'
 import './App.css';
 import Home from './Components/home'
 import Login from './Components/LoginSignin/LoginSignin';
+import Signup from './Components/SignUp/SignUp';
 
 function App() {
   const [loggedIn, setLoggedIn] = useState(false)
@@ -21,6 +22,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home email={email} loggedIn={loggedIn} setLoggedIn={setLoggedIn} />} />
           <Route path="/login" element={<Login setLoggedIn={setLoggedIn} setEmail={setEmail} />} />
+          <Route path="/signup" element={<Signup />} />
         </Routes>
       </BrowserRouter>
     </div>
