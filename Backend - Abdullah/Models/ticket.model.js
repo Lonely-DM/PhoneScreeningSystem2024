@@ -3,43 +3,42 @@ const mongoose = require("mongoose");
 const TicketSchema = mongoose.Schema(
   {
     callerID: {
-        type: String,
-        required: [true, "Please enter Caller ID"],
+      type: String,
+      required: [true, "Please enter Caller ID"],
     },
 
     agentID: {
-        type: String,
-        required: [true, "Please enter Assigned Agent ID"],
+      type: String,
+      required: [true, "Please enter Assigned Agent ID"],
     },
 
     dateCreated: {
-        type: Date,
-        default: Date.now()
+      type: Date,
+      default: Date.now(),
     },
 
     dateClosed: {
-        type: Date
+      type: Date,
     },
 
     status: {
-        type: String,
-        required: [true, "Please enter Staus of Ticket"]
+      type: String,
+      required: [true, "Please enter Staus of Ticket"],
     },
 
     description: {
-        type: String
+      type: String,
     },
 
     priority: {
-        type: String,
-        required: [true, "Please enter Priority of Ticket"]
+      type: String,
+      required: [true, "Please enter Priority of Ticket"],
     },
   },
   {
     timestamps: true,
   }
 );
-
 
 const Ticket = mongoose.model("Ticket", TicketSchema);
 

@@ -8,8 +8,8 @@ const UserSchema = mongoose.Schema(
     },
 
     role: {
-        type: String,
-        required: [true, "Please enter Role of User"]
+      type: String,
+      required: [true, "Please enter Role of User"],
     },
 
     image: {
@@ -21,7 +21,6 @@ const UserSchema = mongoose.Schema(
     timestamps: true,
   }
 );
-
 
 const User = mongoose.model("User", UserSchema);
 

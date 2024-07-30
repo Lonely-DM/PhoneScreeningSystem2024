@@ -1,10 +1,15 @@
 const express = require("express");
 const Ticket = require("../Models/ticket.model.js");
 const router = express.Router();
-const {getTickets, getTicket, createTicket, updateTicket, deleteTicket} = require('../Controllers/ticket.controller.js');
+const {
+  getTickets,
+  getTicket,
+  createTicket,
+  updateTicket,
+  deleteTicket,
+} = require("../Controllers/ticket.controller.js");
 
-
-router.get('/', getTickets);
+router.get("/", getTickets);
 router.get("/:id", getTicket);
 
 router.post("/", createTicket);
@@ -14,8 +19,5 @@ router.put("/:id", updateTicket);
 
 // delete a product
 router.delete("/:id", deleteTicket);
-
-
-
 
 module.exports = router;
