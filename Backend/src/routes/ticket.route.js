@@ -1,5 +1,4 @@
 const express = require("express");
-const Ticket = require("../Models/ticket.model.js");
 const router = express.Router();
 const {
   getTickets,

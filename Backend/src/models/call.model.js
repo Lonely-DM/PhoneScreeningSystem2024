@@ -31,7 +31,7 @@ const CallSchema = mongoose.Schema(
   },
   {
     timestamps: true,
-  }
+  },
 );
 
 const Call = mongoose.model("Call", CallSchema);

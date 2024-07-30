@@ -1,5 +1,4 @@
 const express = require("express");
-const Caller = require("../Models/caller.model.js");
 const router = express.Router();
 const {
   getCallers,

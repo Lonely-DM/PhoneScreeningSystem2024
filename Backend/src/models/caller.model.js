@@ -1,4 +1,3 @@
-const { Int32 } = require("mongodb");
 const mongoose = require("mongoose");
 
 const CallerSchema = mongoose.Schema(
@@ -30,7 +29,7 @@ const CallerSchema = mongoose.Schema(
   },
   {
     timestamps: true,
-  }
+  },
 );
 
 const Caller = mongoose.model("Caller", CallerSchema);
