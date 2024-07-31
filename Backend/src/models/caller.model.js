@@ -1,4 +1,3 @@
-const { Int32 } = require("mongodb");
 const mongoose = require("mongoose");
 
 const CallerSchema = mongoose.Schema(
@@ -9,18 +8,18 @@ const CallerSchema = mongoose.Schema(
     },
 
     phoneNumber: {
-        type: String,
-        required: [true, "Please enter Phone Number"]
+      type: String,
+      required: [true, "Please enter Phone Number"],
     },
 
     address: {
-        type: String,
-        required: [true, "Please enter Address"]
+      type: String,
+      required: [true, "Please enter Address"],
     },
 
     age: {
-        type: Number,
-        required: [true, "Please enter Age"]
+      type: Number,
+      required: [true, "Please enter Age"],
     },
 
     image: {
@@ -30,9 +29,8 @@ const CallerSchema = mongoose.Schema(
   },
   {
     timestamps: true,
-  }
+  },
 );
-
 
 const Caller = mongoose.model("Caller", CallerSchema);
 

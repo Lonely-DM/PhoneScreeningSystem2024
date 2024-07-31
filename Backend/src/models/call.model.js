@@ -8,32 +8,31 @@ const CallSchema = mongoose.Schema(
     },
 
     date: {
-        type: Date,
-        required: [true, "Please enter Date of Call"]
+      type: Date,
+      required: [true, "Please enter Date of Call"],
     },
 
     durationInSeconds: {
-        type: Number,
-        required: [true, "Please enter Call Duration in Second(s)"]
+      type: Number,
+      required: [true, "Please enter Call Duration in Second(s)"],
     },
 
     trascript: {
-        type: String
+      type: String,
     },
 
     audioFile: {
-        type: String
+      type: String,
     },
 
     tags: {
-        type: [String]
+      type: [String],
     },
   },
   {
     timestamps: true,
-  }
+  },
 );
-
 
 const Call = mongoose.model("Call", CallSchema);
 
