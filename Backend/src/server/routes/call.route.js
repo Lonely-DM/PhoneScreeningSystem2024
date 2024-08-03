@@ -1,6 +1,8 @@
 const express = require("express");
+
+const { getCalls, getCall, createCall, updateCall, deleteCall } = require("../../controllers/call.controller.js");
+
 const router = express.Router();
-const { getCalls, getCall, createCall, updateCall, deleteCall } = require("../Controllers/call.controller.js");
 
 router.get("/", getCalls);
 router.get("/:id", getCall);
