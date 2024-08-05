@@ -1,31 +1,13 @@
-const express = require("express");
+require("dotenv").config();
+
 const mongoose = require("mongoose");
-const User = require("./Models/user.model.js");
-const userRoute = require("./Routes/user.route.js");
-const Caller = require("./Models/caller.model.js");
-const callerRoute = require("./Routes/caller.route.js");
-const Call = require("./Models/call.model.js");
-const callRoute = require("./Routes/call.route.js");
-const Ticket = require("./Models/ticket.model.js");
-const ticketRoute = require("./Routes/ticket.route.js");
-const app = express();
 
-// middleware
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
+const { createApp } = require("./server");
 
-// routes
-app.use("/api/users", userRoute);
-app.use("/api/callers", callerRoute);
-app.use("/api/calls", callRoute);
-app.use("/api/tickets", ticketRoute);
-
-app.get("/", (req, res) => {
-  res.send("Hello from the Backend Server!");
-});
+const app = createApp();
 
 mongoose
-  .connect("<Your URL Here")
+  .connect(process.env.MONGO_URL)
   .then(() => {
     console.log("Connected to Database!");
     app.listen(3000, () => {

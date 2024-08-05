@@ -1,12 +1,14 @@
 const express = require("express");
-const router = express.Router();
+
 const {
   getCallers,
   getCaller,
   createCaller,
   updateCaller,
   deleteCaller,
-} = require("../Controllers/caller.controller.js");
+} = require("../../controllers/caller.controller.js");
+
+const router = express.Router();
 
 router.get("/", getCallers);
 router.get("/:id", getCaller);
