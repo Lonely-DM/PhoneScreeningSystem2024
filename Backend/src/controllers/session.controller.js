@@ -19,7 +19,7 @@ const createSession = async (req, res) => {
 
     const token = jwt.sign({ id: user.id }, JWT_SECRET);
 
-    res.cookie(SESSION_COOKIE_NAME, token);
+    res.cookie(SESSION_COOKIE_NAME, token, { httpOnly: true });
 
     res.status(200).json({ created: true });
   } catch (error) {
