@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "main": "src/index.js",
   "scripts": {
-    "db:start": "docker run --name srv-mongodb -d -p 27017:27017 mongo:8.0.0-rc15-jammy",
+    "db:setup": "docker run --name srv-mongodb -d -p 27017:27017 mongo:8.0.0-rc15-jammy",
+    "db:start": "docker start srv-mongodb",
+    "db:stop": "docker stop srv-mongodb",
     "dev": "nodemon src/index.js",
     "lint": "eslint",
     "serve": "node src/index.js",
@@ -14,8 +16,10 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
+    "lodash": "^4.17.21",
     "mongodb": "^6.6.1",
     "mongoose": "^8.3.4"
   },

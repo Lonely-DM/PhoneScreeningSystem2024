@@ -1,3 +1,6 @@
+const bcrypt = require("bcryptjs");
+const _ = require("lodash");
+
 const User = require("../Models/user.model");
 
 const getUsers = async (req, res) => {
@@ -21,8 +24,23 @@ const getUser = async (req, res) => {
 
 const createUser = async (req, res) => {
   try {
-    const user = await User.create(req.body);
-    res.status(200).json(user);
+    const { password, confirmPassword, ...rest } = req.body;
+
+    if (!password || password.trim() === "" || password !== confirmPassword) {
+      throw new Error("The passwords given do not match the required schema");
+    }
+
+    const salt = bcrypt.genSaltSync(10);
+    const passwordHash = bcrypt.hashSync(password, salt);
+
+    const userArgs = {
+      ...rest,
+      passwordHash,
+    };
+
+    const user = await User.create(userArgs);
+
+    res.status(200).json(_.omit(user.toObject(), "passwordHash"));
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
