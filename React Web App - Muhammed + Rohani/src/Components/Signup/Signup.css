@@ -70,12 +70,17 @@
 {
     background-color: #8462b8;
     margin-top: 80px;
-    transition: transform 0.3s ease;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
 }
 
 .sign-btn:hover{
     background: #7e5ab5;
     transform: scale(1.01);
+}
+
+.sign-btn:disabled {
+    background-color: #dedede;
+    color: #888888;
 }
 
 /* Components & Elements for the SRV Logo */
