@@ -1,27 +1,21 @@
 import React, { useState, useEffect } from 'react';
-import './TicketDetail.css'
-import mockData from './mockData'; // Import mock data
+import './TicketDetail.css';
+import mockData from './mockData';
+import UpdateInfoModal from './UpdateInfoModal';
+import { handleStatusUpdate, handleOfficerChange } from './ticketActions';
 
 const TicketDetail = () => {
     const [ticketData, setTicketData] = useState(null);
+    const [showModal, setShowModal] = useState(false);
+    const [modalMode, setModalMode] = useState('status');
 
-    // Function to fetch ticket data
     const fetchTicketData = async () => {
-        // Simulate fetching data
         setTicketData(mockData);
     };
 
     useEffect(() => {
         fetchTicketData();
     }, []);
-
-    const handleOfficerChange = () => {
-        // Future implementation for changing officer
-    };
-
-    const handleStatusUpdate = () => {
-        // Future implementation for updating status
-    };
 
     if (!ticketData) {
         return <div>Loading...</div>;
@@ -54,9 +48,10 @@ const TicketDetail = () => {
                 <textarea
                     value={ticketData.description}
                     placeholder="Description"
+                    readOnly
                 />
                 <div className="assigned-officer">
-                    <h2>Assigned Officer: <span id="officer-name">{ticketData.assignedOfficer}</span> <button onClick={handleOfficerChange}>Change</button></h2>
+                <h2>Assigned Officer: <span id="officer-name">{ticketData.assignedOfficer}</span><button onClick={() => { setModalMode('officer'); setShowModal(true); }}>Change Officer</button></h2>
                 </div>
             </div>
             <div className="latest-update-status">
@@ -64,9 +59,17 @@ const TicketDetail = () => {
                     <p><strong>Latest Update:</strong> {ticketData.latestUpdate}</p>
                 </div>
                 <div className="update-status">
-                    <button onClick={handleStatusUpdate}>Update Status</button>
+                    <button onClick={() => { setModalMode('status'); setShowModal(true); }}>Update Status</button>
                 </div>
             </div>
+            <UpdateInfoModal
+                isOpen={showModal}
+                onClose={() => setShowModal(false)}
+                mode={modalMode}
+                currentStatus={ticketData.status}
+                handleStatusUpdate={handleStatusUpdate}
+                handleOfficerChange={handleOfficerChange}
+            />
         </div>
     );
 };
