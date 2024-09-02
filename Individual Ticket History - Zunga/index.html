@@ -1,0 +1,209 @@
+<!-- Potential Personal Ticket History HTML for the SRV Ticketing Solution by Zunga Siakalima  -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Your Ticket History</title>
+
+<!-- CSS and Table Linking -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" type="x-icon" href="srvicon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.1.4/css/dataTables.bootstrap5.css">
+
+<!-- CSS and Table Linking -->
+    <script defer src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script defer src="https://cdn.datatables.net/2.1.4/js/dataTables.js"></script>
+    <script defer src="https://cdn.datatables.net/2.1.4/js/dataTables.bootstrap5.js"></script>
+    <script defer src="scripts.js"></script>
+
+</head>
+<body>
+<div class="grid-container">
+
+<!-- Font + Icon Linking -->
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+
+<!-- Header -->
+<header class="header">
+    <div class="menu-icon" onclick="openSidebar()">
+</div>   
+    <div class="header-right">
+        <span class="material-icons-outlined">menu</span>
+        <span class="material-icons-outlined">notifications</span>
+        <span class="material-icons-outlined">email</span>
+        <span class="material-icons-outlined">account_circle</span>
+    </header>
+
+</head>
+<body>
+
+<!-- Sidebar -->
+<aside id="sidebar">
+<div class="sidebar-title">
+<div class = "sidebar-brand">
+</div>
+    <span class="material-icons-outlined" onclick="closeSidebar()"></span>
+</div>
+<img src="srvlogo.jpeg" style="width:260px;height:160px">
+    <ul class="sidebar-list">
+<li class="sidebar-list-item">
+    <span class="material-icons-outlined">support_agent</span> View The Organisations Assigned Tickets 
+</li>
+</ul>
+</aside>
+
+<!-- Main -->
+<main class="main-container">
+    <div class="main-title">
+    <h1>Your Ticket History</h1>
+    <h2>Hi, Your Assigned Tickets Are Below</h2>
+    <p style="color: green" >In-Progress: 1</p>
+    <p style="color: darkorange">Require Further Action: 3</p>
+</div>
+
+<!-- Data Table: Full Data is Available by Uncollapsing :) -->
+
+<table id="example" class="table table-striped" style="width:100%">
+    <thead>
+        <tr>
+            <th>Ticket ID</th>
+            <th>Client Username</th>
+            <th>Inquiry Tag</th>
+            <th>Selected Priority</th>
+            <th>Date Created</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>SRV_97834281</td>
+            <td>jordanjacobs48</td>
+            <td>General Enquiry</td>
+            <td>Low</td>
+            <td>29/9/2024 - 12:04PM</td>
+            <td style="color:green">In-Progress</td>
+        </tr>
+
+        <tr>
+            <td>SRV_88023025</td>
+            <td>franklin_carcetti</td>
+            <td>Elder Abuse</td>
+            <td style="color:red">High</td>
+            <td>26/9/2024 - 10:03AM </td>
+            <td style="color:darkorange">Requires Further Action</td>
+        </tr>
+
+        <tr>
+            <td>SRV_22982763</td>
+            <td>omarlarge1938</td>
+            <td>General Enquiry</td>
+            <td>Low</td>
+            <td>24/9/2024 - 4:13PM </td>
+            <td style="color:darkorange">Requires Further Action</td>
+        </tr>
+
+        <tr>
+            <td>SRV_38108278</td>
+            <td>kobe_booker8271</td>
+            <td>General Enquiry</td>
+            <td>Low</td>
+            <td>23/9/2024 - 9:05AM </td>
+            <td style="color:darkorange">Requires Further Action</td>
+        </tr>
+
+        <tr>
+            <td>SRV_66581978</td>
+            <td>cjnewton1</td>
+            <td>Professional Staff Enquiry</td>
+            <td>Medium</td>
+            <td>23/9/2024 - 9:01AM </td>
+            <td style="color:blue">Resolved</td>
+        </tr>
+
+        <tr>
+            <td>SRV_44281982</td>
+            <td>smithphillips</td>
+            <td>Help For Someone Else</td>
+            <td>Low</td>
+            <td>20/9/2024 - 1:10PM</td>
+            <td style="color:blue">Resolved</td>
+        </tr>
+
+        <tr>
+            <td>SRV_82452072</td>
+            <td>jalenh1</td>
+            <td>Neglect</td>
+            <td>Medium</td>
+            <td>19/9/2024 - 12:01PM</td>
+            <td style="color:blue">Resolved</td>
+        </tr>
+
+        <tr>
+            <td>SRV_98327618</td>
+            <td>mo_11</td>
+            <td>Elder Abuse</td>
+            <td style="color:red">High</td>
+            <td>19/9/2024 - 11:56AM</td>
+            <td style="color:blue">Resolved</td>
+        </tr>
+
+        <tr>
+            <td>SRV_13920852</td>
+            <td>michaeljames23</td>
+            <td>Help For Someone Else</td>
+            <td>Low</td>
+            <td>18/9/2024 - 4:47PM</td>
+            <td style="color:blue">Resolved</td>
+        </tr>
+
+        <tr>
+            <td>SRV_52928178</td>
+            <td>eddiejetts18</td>
+            <td>General Enquiry</td>
+            <td>Medium</td>
+            <td>18/9/2024 - 12:19PM</td>
+            <td style="color:blue">Resolved</td>
+        </tr>
+
+        <tr>
+            <td>SRV_47328198</td>
+            <td>jonesalex1776</td>
+            <td>Elder Abuse</td>
+            <td style="color:red">High</td>
+            <td>18/9/2024 - 11:04AM</td>
+            <td style="color:blue">Resolved</td>
+        </tr>
+
+        <tr>
+            <td>SRV_13829082</td>
+            <td>tysonali1990</td>
+            <td>General Enquiry</td>
+            <td>Medium</td>
+            <td>18/9/2024 - 9:37AM</td>
+            <td style="color:blue">Resolved</td>
+
+        </tr>
+ 
+    </tbody>
+    <tfoot>
+        <tr>
+            <th>Ticket ID</th>
+            <th>Client Username</th>
+            <th>Inquiry Tag</th>
+            <th>Selected Priority</th>
+            <th>Date Created</th>
+            <th>Status</th>
+        </tr>
+    </tfoot>
+</table>
+
+
+<!-- JS Linking -->
+<script src="js/scripts.js"></script>
+
+</body>
+</html>
