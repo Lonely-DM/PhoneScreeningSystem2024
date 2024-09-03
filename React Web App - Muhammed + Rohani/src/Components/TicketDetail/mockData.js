@@ -1,6 +1,6 @@
 const mockData = {
     ticketId: 'SRV.89871921',
-    status: 'Resolved', // Options: 'Resolved', 'In-Progress', 'Received'
+    status: 'Received', // Options: 'Resolved', 'In-Progress', 'Received'
     client: {
         name: 'kaylasmith1938',
         contact: 'kaylasmith1938@xxx.com'
