@@ -7,6 +7,7 @@ import Signup from "./Components/Signup/Signup";
 import Navbar from "./Components/LandingPage/Navbar";
 import Dashboard from "./Components/Dashboard/Dashboard";
 import TicketDetail from "./Components/TicketDetail/TicketDetail";
+import Calendar from "./Components/Calendar/Calendar";
 
 function App() {
   const [loggedIn, setLoggedIn] = useState(false);
@@ -20,6 +21,7 @@ function App() {
           <Route exact path="/Signup" Component={Signup} />
           <Route path="/dashboard" Component={Dashboard} />
           <Route path="/TicketDetail" Component={TicketDetail} />
+          <Route path="/Calendar" Component={Calendar} />
         </Routes>
       </BrowserRouter>
     </div>

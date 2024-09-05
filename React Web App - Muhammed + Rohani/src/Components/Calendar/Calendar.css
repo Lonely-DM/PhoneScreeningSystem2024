@@ -1,0 +1,171 @@
+.app-container {
+    display: flex;
+    height: 100vh;
+    background-color: #f4f4f4; 
+  }
+  
+
+  .sidebar {
+    width: 20%;
+    padding: 10px;
+    background-color: #9877be; 
+    color: white; 
+    border-right: 1px solid #ddd;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 130px;
+    margin-bottom: 67px;
+  }
+  
+  
+  .react-calendar {
+    width: 100%;
+    border: none;
+    background-color: #9d83bb; 
+    color: white;
+    box-shadow: none;
+    margin-top: 20px;
+  }
+  
+  .react-calendar__tile--active {
+    background-color: #9575cd; 
+    color: white;
+  }
+  
+  .react-calendar__tile--active:enabled:hover,
+  .react-calendar__tile--active:enabled:focus {
+    background-color: #c6b6d8; 
+  }
+  
+  
+  .notes-section {
+    margin-top: 20px;
+    background-color: #977eb3; 
+    padding: 10px;
+    border-radius: 5px;
+    color: white;
+  }
+  
+  .notes-section h3 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    color: white; 
+  }
+  
+  .notes-section ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .notes-section li {
+    background-color: #8d73b9; 
+    margin-bottom: 5px;
+    padding: 5px;
+    border-radius: 3px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+  }
+  
+  /* Main calendar styling */
+  #Calendar {
+    flex-grow: 1;
+    height: 80%;
+    width: 80%;
+    margin: auto;
+    background-color: #ffffff; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+    border-radius: 8px; 
+    margin-top: 120px;
+  }
+  
+  .rbc-month-view {
+    flex-basis: 500px !important;
+    background-color: #f4f4f4; 
+  }
+  
+  .rbc-toolbar {
+    background-color: #f4f4f4; 
+    color: black;
+  }
+  
+  .rbc-toolbar-label {
+    font-weight: bold;
+    font-size: 1.5em;
+    color: rgb(101, 42, 134); /* Blue text for toolbar */
+  }
+  
+  .rbc-toolbar button {
+    background-color: #b2cbe6; /* Blue buttons for toolbar */
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+    margin: 0 5px;
+  }
+  
+  .rbc-toolbar button:hover {
+    background-color: #a8c5e4; /* Darker blue on hover */
+  }
+  
+  .rbc-date-cell {
+    color: rgb(15, 114, 226); /* Blue for date numbers */
+  }
+  
+  .rbc-today {
+    background-color: rgb(196, 226, 250) !important; /* Light blue highlight for today */
+  }
+  
+  .rbc-event {
+    display: block;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    overflow: hidden;
+    padding: 5px;
+    margin: 0;
+    border-radius: 5px;
+    background-color: #7F5BA7; /* Use new color for events to match sidebar */
+    color: white;
+  }
+  
+  .rbc-time-content {
+    border-top: 1px solid #ddd;
+  }
+  
+  .rbc-time-slot {
+    height: 30px;
+  }
+  
+  .rbc-day-bg {
+    position: relative;
+    background-color: #f4f4f4; /* Light background for day cells */
+  }
+  
+  .color-picker-container {
+    display: flex;
+    justify-content: center;
+    margin: 30px 0;
+    padding-top: 15px;
+  }
+  
+  .color-circle {
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    border: 2px solid transparent;
+    margin: 0 20px;
+  }
+  
+  .color-circle.selected {
+    border-color: black;
+  }
+  
+  .dialog-buttons {
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+  }
