@@ -3,68 +3,104 @@ import { AreaChart, Area, XAxis, YAxis,  CartesianGrid, Tooltip, Legend} from 'r
 
 const enquiry = [
   {
-    name: 'Day 1',
-    option1: 4000,
-    option2: 2400,
+    year: '2014',
+    Psychological: 314,
+    Financial: 289,
+    Physical: 75,
+    Social: 39,
+    Neglect: 6,
+    
   },
   {
-    name: 'Day 6',
-    option1: 3000,
-    option2: 2210,
+    year: '2015',
+    Psychological: 652,
+    Financial: 662,
+    Physical: 162,
+    Social: 130,
+    Neglect: 197,
+    
   },
   {
-    name: 'Day 12',
-    option1: 2000,
-    option2: 2290,
+    year: '2016',
+    Psychological: 788,
+    Financial: 821,
+    Physical: 296,
+    Social: 229,
+    Neglect: 263,
+    
   },
   {
-    name: 'Day 18',
-    option1: 2780,
-    option2: 2000,
+    year: '2017',
+    Psychological: 1127,
+    Financial: 1392,
+    Physical: 331,
+    Social: 165,
+    Neglect: 99,
+    
   },
   {
-    name: 'Day 24',
-    option1: 1890,
-    option2: 2181,
+    year: '2018',
+    Psychological: 1037,
+    Financial: 1463,
+    Physical: 271,
+    Social: 175,
+    Neglect: 0,
+    
   },
   {
-    name: 'Day 30',
-    option1: 2390,
-    option2: 2500,
+    year: '2019',
+    Psychological: 567,
+    Financial: 1030,
+    Physical: 131,
+    Social: 141,
+    Neglect: 0,
+    
   },
+  {
+    year: '2020',
+    Psychological: 784,
+    Financial: 703,
+    Physical: 184,
+    Social: 170,
+    Neglect: 0,
+   
+  },
+  {
+    year: '2021',
+    Psychological: 952,
+    Financial: 980,
+    Physical: 210,
+    Social: 315,
+    Neglect: 105,
+    
+  },
+
 ];
 
 const AreaChartComp = () => {
   return (
-    <AreaChart width={500} height={345} data={enquiry}>
+    <AreaChart width={550} height={350} data={enquiry} margin={{ top: 22, bottom: -25 }}>
       <YAxis />
-        <XAxis dataKey="name" />
+      <XAxis dataKey="year" ticks={['2016', '2018', '2020']}  />
+      
         <CartesianGrid strokeDasharray="5 5" />
 
-        <Tooltip/>
+        <Tooltip 
+        contentStyle={{ fontSize: '12px', padding: '1px', borderRadius: '5px', lineHeight: '15px', backgroundColor: 'rgba(255, 255, 255, 0.9)' }} 
+        itemStyle={{ fontSize: '10px', padding: '3px', margin: '0px' }} 
+        labelStyle={{ fontSize: '12px', marginBottom: '5px', textAlign:'center'}} 
+      />
         <Legend/>
       
       
-      <Area
-          
-          dataKey="option1"
-          stroke="#2563eb"
-          fill="#3b82f6"
-          stackId="1"
-        />
-
-        <Area
-          
-          dataKey="option2"
-          stroke="#1E3A8A"
-          fill="#1E3A8A"
-          stackId="1"
-        />
+      <Area type="monotone" dataKey="Psychological" stroke="#2563eb" fill="#2563eb" stackId="1" />
+      <Area type="monotone" dataKey="Financial" stroke="#96d9c0" fill="#96d9c0" stackId="1" />
+      <Area type="monotone" dataKey="Physical" stroke="#e11d48" fill="#e11d48" stackId="1" />
+      <Area type="monotone" dataKey="Social" stroke="#FF5700"  fill="#FF5700" stackId="1" />
+      <Area type="monotone" dataKey="Neglect" stroke="#6b7280" fill="#6b7280" stackId="1" />
+      
         </AreaChart>
     
-    
-
-
   )
 }
 

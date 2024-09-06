@@ -1,4 +1,3 @@
-/* Potential User Dashboard CSS for the SRV Ticketing Solution by Zunga Siakalima */
 body {
     margin: 0;
     padding: 0; 
@@ -173,14 +172,18 @@ body {
     margin-top: -90px;
   }
 
+  .ticket-header1{
+    font-size: 14px;
+  }
+
   .ticket-box {
     margin-top: 18px;
     background-color: white;
-    padding: 15px;
+    padding: 5px;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     border: 1px solid #ddd;
-    transition: box-shadow 0.3s, background-color 0.3s; /* Added background-color transition */
+    transition: box-shadow 0.3s, background-color 0.3s; 
     cursor: pointer; 
   }
   
@@ -190,7 +193,48 @@ body {
   }
 
   .description {
-    font-size: 14px; 
+    font-size: 13px; 
+    margin-top: 10px;
   }
+
+  .user-info {
+    margin-top: 10px;
+}
   
+.profile-icon {
+    color: #5f5555; 
+    transform: scale(0.8);
+    transform-origin: center;
+}
+
+.user-name {
+    font-size: 11px;
+    color: #5f5555; 
+}
+
+.prior-level{
+    margin-left: 310px;
+    font-weight: bold;
+    margin-top: -10px;
+}
+
+.prior.high {
+    color: red;
+}
+  
+.prior.medium {
+    color: orange;
+}
+  
+.prior.low {
+    color: green;
+}
+
+.material-symbols-outlined {
+    margin-right: 4px; 
+    position: relative;
+    top: 6px; 
+    font-size: 24px; 
+}
+
   
