@@ -1,26 +1,27 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
 
-body, html {
+body,
+html {
   height: 100%;
   margin: 0;
   display: flex;
   justify-content: center;
   align-items: center;
   background: linear-gradient(135deg, #f1e3ff, #dcc6f5);
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 .container {
-  width: 600px;  
-  padding: 60px 60px; 
+  width: 600px;
+  padding: 60px 60px;
   background-color: white;
   color: #333;
   border-radius: 15px;
-  border: 1px solid #947BB9;
+  border: 1px solid #947bb9;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   text-align: center;
-  position: relative;   
-  min-height: auto;    
+  position: relative;
+  min-height: auto;
 }
 
 .container h1 {
@@ -37,7 +38,7 @@ body, html {
 }
 
 .container p a {
-  color: #947BB9;
+  color: #947bb9;
   font-weight: 600;
   text-decoration: none;
 }
@@ -94,12 +95,12 @@ body, html {
 }
 
 .remember-forgot label input {
-  accent-color: #947BB9;
+  accent-color: #947bb9;
   margin-right: 5px;
 }
 
 .remember-forgot a {
-  color: #947BB9;
+  color: #947bb9;
   text-decoration: none;
 }
 
@@ -110,7 +111,7 @@ body, html {
 button {
   width: 100%;
   height: 50px;
-  background-color: #947BB9;
+  background-color: #947bb9;
   color: white;
   border: none;
   border-radius: 30px;
@@ -132,13 +133,3 @@ button:hover {
   width: 110px;
   height: auto;
 }
-
-
-
-
-
-
-
-
-
-

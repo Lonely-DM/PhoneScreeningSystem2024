@@ -43,6 +43,11 @@ const UserSchema = mongoose.Schema(
       required: [true, "Please enter password of User"],
       select: false,
     },
+
+    totpSecret: {
+      type: String,
+      required: false,
+    },
   },
   {
     timestamps: true,

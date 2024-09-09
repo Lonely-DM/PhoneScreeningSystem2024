@@ -1,7 +1,12 @@
 const bcrypt = require("bcryptjs");
+const jwt = require("jsonwebtoken");
 const _ = require("lodash");
+const { authenticator } = require("otplib");
 
 const User = require("../Models/user.model");
+const { SESSION_COOKIE_NAME } = require("../config/constants");
+
+const { JWT_SECRET } = process.env;
 
 const getUsers = async (req, res) => {
   try {
@@ -39,6 +44,10 @@ const createUser = async (req, res) => {
     };
 
     const user = await User.create(userArgs);
+
+    const token = jwt.sign({ id: user.id }, JWT_SECRET);
+
+    res.cookie(SESSION_COOKIE_NAME, token, { httpOnly: true });
 
     res.status(200).json(_.omit(user.toObject(), "passwordHash"));
   } catch (error) {
@@ -79,10 +88,24 @@ const deleteUser = async (req, res) => {
   }
 };
 
+const setTotp = async (req, res) => {
+  if (!req.user) return res.status(401).end();
+
+  const secret = authenticator.generateSecret();
+
+  const otpAuth = authenticator.keyuri(req.user.email, "SRVPhoneScreeningSystem", secret);
+
+  req.user.totpSecret = secret;
+  await req.user.save();
+
+  return res.json({ otpAuth });
+};
+
 module.exports = {
   getUsers,
   getUser,
   createUser,
   updateUser,
   deleteUser,
+  setTotp,
 };
