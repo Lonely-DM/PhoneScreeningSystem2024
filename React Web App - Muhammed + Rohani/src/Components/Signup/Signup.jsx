@@ -26,7 +26,7 @@ const Signup = () => {
         confirmPassword: formData.confirmPassword,
       });
 
-      navigate("/dashboard");
+      navigate("/setup-mfa");
     } catch (err) {
       const response = await err.response?.json();
       alert("There was an issue creating the user: " + (response?.message ?? "N/A"));
