@@ -1,0 +1,158 @@
+/* Profile Page Styling */
+.profile-page {
+  width: 100%;
+  max-width: 6000px; /* Adjusted the max-width to a reasonable value */
+  margin: 0 auto;
+  text-align: center;
+  font-family: 'Arial', sans-serif;
+  background-color: #fff;
+}
+
+.profile-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #fff;
+}
+
+.logo {
+  width: 150px;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+}
+
+.bell-icon {
+  width: 24px;
+  margin-right: 20px;
+}
+
+.user-section {
+  display: flex;
+  align-items: center;
+}
+
+.header-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.user-name {
+  font-weight: bold;
+  color: #000;
+}
+
+.profile-info {
+  background-color: #F2E9F2;
+  padding: 30px 0;
+}
+
+.avatar-container {
+  position: relative;
+  margin-top: -40px;
+}
+
+.avatar-circle {
+  width: 130px;
+  height: 130px;
+  border: 4px solid #8A2BE2; /* Purple border */
+  border-radius: 50%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-avatar {
+  width: 120px; /* Adjusted to fit inside the circle */
+  height: 120px;
+  border-radius: 50%;
+}
+
+h1 {
+  margin-top: 20px;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+p {
+  color: #999;
+  font-size: 16px;
+}
+
+.job-title {
+  font-size: 16px;
+  font-weight: normal;
+  color: #666; /* Slightly darker for job role */
+  margin-top: 5px;
+}
+
+/* Stats Section Styling */
+.stats-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.stat-item {
+  padding: 0 15px;
+}
+
+.stat-item h2 {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.stat-item p {
+  font-size: 14px;
+  color: #999;
+}
+
+.stat-divider {
+  width: 1px;
+  height: 50px;
+  background-color: #ccc;
+}
+
+/* Buttons Section */
+.profile-actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.home-button {
+  background-color: #4B0082; /* Dark Purple */
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.home-button:hover {
+  background-color: #3A006A; /* Slightly darker purple on hover */
+}
+
+.settings-button {
+  background-color: transparent;
+  color: #FF8C00; /* Orange */
+  border: 2px solid #FF8C00;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.settings-button:hover {
+  background-color: #FF8C00;
+  color: #fff;
+}
