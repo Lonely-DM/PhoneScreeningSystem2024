@@ -1,74 +1,82 @@
 .card-carousel-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-    overflow-x: auto;
-    width: 100%;
-    scrollbar-width: none; /* Firefox */
-    -ms-overflow-style: none; /* Internet Explorer 10+ */
-    scroll-behavior: smooth; /* Smooth scrolling */
-   
-  }
-  
-  .card-carousel-container::-webkit-scrollbar {
-    display: none; /* Safari and Chrome */
-  }
-  
-  .card-carousel::-webkit-scrollbar {
-    display: none;
-  }
-  
-  .card-carousel {
-    display: flex;
-    scroll-snap-type: x mandatory;
-    overflow-x: scroll;
-    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
-  }
-  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  overflow-x: hidden; /* Hide horizontal overflow */
+  width: 100%;
+  position: relative; /* Position for button positioning */
+}
+
+.card-carousel {
+  display: flex;
+  scroll-snap-type: x mandatory;
+  overflow-x: scroll;
+  -webkit-overflow-scrolling: touch;
+  gap: 10px; /* Add space between cards */
+  padding: 10px 0; /* Add vertical padding */
+}
+
+.card {
+  flex: 0 0 auto; /* Maintain card width while allowing scrolling */
+  width: 300px; /* Default width */
+  margin: 0 10px;
+  text-align: left;
+  background-color: #66429B;
+  border-radius: 8px; /* Rounded corners for cards */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for cards */
+}
+
+.card img {
+  width: 100%;
+  height: 200px; /* Adjust height for smaller screens */
+  object-fit: cover;
+  background-color: white;
+  border-top-left-radius: 8px; /* Rounded corners for images */
+  border-top-right-radius: 8px;
+}
+
+.card h3,
+.card p {
+  margin: 10px;
+  font-size: 16px;
+  color: white;
+}
+
+.scroll-btn {
+  background-color: transparent;
+  border: none;
+  padding: 10px;
+  font-size: 24px;
+  cursor: pointer;
+  outline: none;
+  color: #888;
+  transition: color 0.3s ease;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+}
+
+.scroll-btn:hover {
+  color: #333;
+}
+
+.scroll-btn:first-of-type {
+  left: 0; /* Position the left scroll button */
+}
+
+.scroll-btn:last-of-type {
+  right: 0; /* Position the right scroll button */
+}
+
+/* Media Query for Smaller Screens */
+@media (max-width: 768px) {
   .card {
-    flex: 0 0 300px;
-    margin: 0 10px;
-    text-align: left;
-    background-color: #66429B;
+    width: 80%; /* Make cards smaller on mobile screens */
   }
-  
-  .card img {
-    width: 100%;
-    height: auto;
-    background-color: white;
-  }
-  
-  .card h3 {
-    margin-top: 10px;
-    font-size: 20px;
-    color: white;
-    padding-left: 20px;
-    padding-bottom: 20px;
-    background-color: #66429B;
-  }
-  
-  .card p {
-    margin-top: 5px;
-    font-size: 16px;
-    color: white;
-    padding-left: 20px;
-    padding-bottom: 20px;
-    background-color: #66429B;
-  }
-  
+
   .scroll-btn {
-    background-color: transparent;
-    border: none;
-    padding: 2px;
-    font-size: 24px;
-    cursor: pointer;
-    outline: none;
-    color: #888;
-    transition: color 0.3s ease; /* Smooth color transition */
+    display: none; /* Hide scroll buttons on smaller screens */
   }
-  
-  .scroll-btn:hover {
-    color: #333; /* Change color on hover */
-  }
-  
+}
