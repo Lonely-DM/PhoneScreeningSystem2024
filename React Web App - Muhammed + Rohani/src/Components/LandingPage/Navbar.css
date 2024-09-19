@@ -1,76 +1,112 @@
-.navbar{
+/* Navbar main styling */
+.navbar {
     width: 100%;
     display: flex;
-    align-items: center;
-    justify-content: space-between; 
+    align-items: center; /* Align items vertically in the center */
+    justify-content: space-between; /* Space between the logo/title and the buttons */
     background: white;
     padding: 4px 6%;
+    box-sizing: border-box;
+    flex-wrap: wrap; /* Allow wrapping for responsiveness */
 }
 
-.navbar .logo{
+.navbar .logo {
     width: 160px;
 }
 
-.navbar h1{
-     font-size: 26px;
-     margin-left: 60px;
-     font-family: Poppins;
-     font-weight: 600;
-     
+.navbar h1 {
+    font-size: 26px;
+    margin-left: 20px; /* Reduce left margin */
+    font-family: Poppins, sans-serif;
+    font-weight: 600;
 }
 
-ul{
+/* Styling for the list */
+ul {
     display: flex;
-    flex: 1; 
-    justify-content: flex-end; /* Aligns items to the right */
+    justify-content: flex-end;
+    align-items: center; /* Align buttons vertically */
     list-style: none;
     padding: 0;
     margin: 0;
 }
 
-ul li{
+ul li {
     display: inline-block;
     margin: 10px 20px;
 }
 
+/* Button styles */
+.orange, .purple {
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    outline: 0;
+    border: 0;
+    background: radial-gradient(100% 100% at 100% 0%, #ac81bb 0%, #947BB9 100%);
+    padding: 0 32px;
+    border-radius: 6px;
+    height: 48px;
+    font-size: 18px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+/* Different background colors for buttons */
 .orange {
-    color: white;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    outline: 0;
-    border: 0;
-    cursor: pointer;
-    background: radial-gradient( 100% 100% at 100% 0%, #f5a030 0%, #fa9827 100% );
-    padding: 0 32px;
-    border-radius: 6px;
-    height: 48px;
-    font-size: 18px;
+    background: radial-gradient(100% 100% at 100% 0%, #f5a030 0%, #fa9827 100%);
 }
 
-.orange:hover {
-    box-shadow: 0px 4px 8px rgb(45 35 66 / 40%), 0px 7px 13px -3px rgb(45 35 66 / 30%), inset 0px -3px 0px #fd950c;
+.orange:hover, .purple:hover {
+    box-shadow: 0px 4px 8px rgba(45, 35, 66, 0.4), 0px 7px 13px -3px rgba(45, 35, 66, 0.3), inset 0px -3px 0px rgba(255, 255, 255, 0.2);
     transform: translateY(-2px);
 }
 
-.purple {
-    color: white;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    outline: 0;
-    border: 0;
-    cursor: pointer;
-    background: radial-gradient( 100% 100% at 100% 0%, #ac81bb 0%, #947BB9 100% );
-    padding: 0 32px;
-    border-radius: 6px;
-    height: 48px;
-    font-size: 18px;
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: row; /* Keep items in a single row */
+        flex-wrap: wrap; /* Allow wrapping for responsiveness */
+        justify-content: center; /* Center-align the logo and title */
+    }
+
+    .navbar .logo, .navbar h1 {
+        margin-bottom: 0; /* Remove bottom margin */
+    }
+
+    .navbar h1 {
+        margin-left: 10px; /* Reduce left margin */
+        font-size: 22px;
+    }
+
+    ul {
+        flex-direction: row;
+        width: 100%;
+        justify-content: center; /* Center-align the buttons */
+        padding: 0;
+    }
+
+    ul li {
+        margin: 10px 10px;
+    }
+
+    .navbar .logo {
+        width: 120px; /* Reduce logo size on mobile */
+    }
 }
 
-.purple:hover {
-    box-shadow: 0px 4px 8px rgb(45 35 66 / 40%), 0px 7px 13px -3px rgb(45 35 66 / 30%), inset 0px -3px 0px #947BB9;
-    transform: translateY(-2px);
+@media (max-width: 480px) {
+    .navbar h1 {
+        font-size: 18px;
+    }
+
+    .navbar .logo {
+        width: 100px; /* Further reduce logo size */
+    }
+
+    .orange, .purple {
+        padding: 0 20px;
+        font-size: 16px;
+        height: 40px;
+    }
 }
-  
- 

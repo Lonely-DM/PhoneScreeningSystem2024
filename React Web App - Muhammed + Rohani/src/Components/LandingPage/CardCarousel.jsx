@@ -1,16 +1,16 @@
 import React, { useRef } from 'react';
-import logo from '../Assets/placeholder.jpg';
+// import logo from '../Assets/placeholder.jpg';
 import './CardCarousel.css';
+import image1 from '../Assets/image1.png'
+import image2 from '../Assets/image2.png'
+import image3 from '../Assets/image3.jfif'
 
 const CardCarousel = () => {
   const cards = [
-    { id: 1, imageUrl: logo, title: 'Feature 1', description: 'Description for Feature 1' },
-    { id: 2, imageUrl: logo, title: 'Feature 2', description: 'Description for Feature 2' },
-    { id: 3, imageUrl: logo, title: 'Feature 3', description: 'Description for Feature 3' },
-    { id: 4, imageUrl: logo, title: 'Feature 4', description: 'Description for Feature 4' },
-    { id: 5, imageUrl: logo, title: 'Feature 5', description: 'Description for Feature 5' },
-    { id: 6, imageUrl: logo, title: 'Feature 6', description: 'Description for Feature 6' },
-    { id: 7, imageUrl: logo, title: 'Feature 7', description: 'Description for Feature 7' },
+    { id: 1, imageUrl: image1, title: 'Support for Seniors facing abuse', description: "If informed of elder abuse, provide immediate, confidential support, prioritize the individual's safety, listen empathetically, document carefully, and connect them with appropriate resources."},
+    { id: 2, imageUrl: image2, title: 'Social and Community', description: 'Provide information about local community programs, clubs, and social activities tailored for seniors, promoting social engagement and reducing isolation.' },
+    { id: 3, imageUrl: image3, title: 'Financial and Legal', description: 'Help seniors determine eligibility for benefits and entitlements, provide access to financial advisors for budgeting and retirement planning, and offer legal aid for issues like wills and power of attorney' },
+
     // Add more cards as needed
   ];
 
