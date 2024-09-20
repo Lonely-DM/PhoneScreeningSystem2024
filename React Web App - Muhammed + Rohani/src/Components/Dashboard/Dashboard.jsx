@@ -1,12 +1,15 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Dashboard.css'; // Import your CSS file here
 import { openSidebar, closeSidebar } from './Script.js';
 import logo from '../Assets/logo.png';
 import AreaChart from './AreaChartComp.js'
+import Chatbot from './Chatbot'; 
+
 
 const Dashboard = () => {
   return (
-    <div>
+    <div> 
       <head>
         <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet" />
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet" />
@@ -52,6 +55,11 @@ const Dashboard = () => {
             <li className="sidebar-list-item">
             <span class="material-symbols-outlined">calendar_month</span> Calendar
             </li>
+            <li className="sidebar-list-item">
+      <Link to="/AIInsights" className="sidebar-link">
+        <span className="material-icons-outlined">description</span> AI-Insights
+    </Link>
+          </li>
             <li className="sidebar-list-item">
               <span className="material-icons-outlined">settings</span> Settings
             </li>
@@ -128,6 +136,7 @@ const Dashboard = () => {
             </div>
           </div>
         </main>
+        <Chatbot />
       </div>
     </div>
   );
