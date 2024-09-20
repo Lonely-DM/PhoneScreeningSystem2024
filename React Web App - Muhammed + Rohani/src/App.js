@@ -11,13 +11,15 @@ import TicketDetail from "./Components/TicketDetail/TicketDetail";
 import Calendar from "./Components/Calendar/Calendar";
 import Profile from "./Components/Profile/ProfileCard";
 import Settings from "./Components/settings/ProfileSettings";
-
+import ClientInfo from "./Components/ClientInfo/ClientInfo";
+import AIInsights from "./Components/AI-insights/AIInsights";
 
 function App() {
   const [loggedIn, setLoggedIn] = useState(false);
   const [email, setEmail] = useState("");
+
   return (
-    <div class="main">
+    <div className="main">
       <BrowserRouter>
         <Routes>
           <Route exact path="/" element={<Home email={email} loggedIn={loggedIn} setLoggedIn={setLoggedIn} />} />
@@ -29,6 +31,8 @@ function App() {
           <Route path="/Calendar" Component={Calendar} />
           <Route path="/profile" Component={Profile} /> 
           <Route path="/settings" Component={Settings} /> 
+          <Route path="/clientinfo" Component={ClientInfo} /> 
+          <Route path="/AIInsights" Component={AIInsights} />
         </Routes>
       </BrowserRouter>
     </div>

@@ -1,0 +1,118 @@
+/* Container for the page layout */
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    padding: 20px;
+    background-color: #e6e6fa; /* Light purple background */
+}
+
+/* Main content styles */
+.main-content {
+    flex: 1;
+    padding: 20px;
+}
+
+/* Header styles */
+.header {
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Header left styles */
+.header-left {
+    text-align: center;
+}
+
+.header-left h1 {
+    margin: 0;
+    font-size: 2rem;
+    color: #343a40;
+}
+
+.header-left p {
+    color: #6c757d;
+    font-size: 1rem;
+}
+
+/* Header right styles */
+.header-right {
+    display: flex;
+    align-items: center;
+}
+
+.icon-btn {
+    background: none;
+    border: none;
+    color: #343a40;
+    font-size: 1.5rem;
+    margin-left: 15px;
+    cursor: pointer;
+}
+
+/* Charts section styles */
+.charts {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* Evenly distribute charts */
+    align-items: flex-start; /* Align charts at the top */
+    gap: 20px;
+}
+
+/* Adjusted chart-container to fit within its container and align in a grid */
+.chart-container {
+    flex: 1 1 calc(33% - 20px); /* Three charts per row, accounting for gap */
+    max-width: 400px; /* Control the max-width for larger screens */
+    height: 300px; /* Fixed height to ensure charts stay within bounds */
+    padding: 30px;
+    box-sizing: border-box;
+    text-align: center;
+    margin: 0 auto;
+    position: relative;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #ffffff;
+}
+
+/* Ensures charts themselves are responsive and fit properly */
+.chart-container > * {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Chart title styling */
+.chart-container h2 {
+    margin: 0 0 10px 0;
+    font-size: 0.8rem;
+    color: #343a40;
+    font-weight: 600;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 1024px) {
+    .chart-container {
+        flex: 1 1 calc(50% - 20px); /* Two charts per row on smaller screens */
+        height: auto;
+        padding: 20px;
+    }
+
+    .charts {
+        gap: 15px; /* Reduced gap on smaller screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .chart-container {
+        flex: 1 1 100%; /* Single chart per row on mobile */
+        height: auto;
+        padding: 10px;
+    }
+
+    .charts {
+        gap: 10px;
+    }
+}
