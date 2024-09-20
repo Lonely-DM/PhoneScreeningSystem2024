@@ -1,9 +1,11 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Dashboard.css'; // Import your CSS file here
 import { openSidebar, closeSidebar } from './Script.js';
 import logo from '../Assets/logo.png';
 import AreaChart from './AreaChartComp.js'
-import { Link } from 'react-router-dom'; // Import Link from react-router-dom
+import Chatbot from './Chatbot'; 
+
 
 const Dashboard = () => {
   return (
@@ -134,6 +136,7 @@ const Dashboard = () => {
             </div>
           </div>
         </main>
+        <Chatbot />
       </div>
     </div>
   );
