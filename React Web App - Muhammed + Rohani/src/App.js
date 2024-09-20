@@ -9,9 +9,9 @@ import Navbar from "./Components/LandingPage/Navbar";
 import Dashboard from "./Components/Dashboard/Dashboard";
 import TicketDetail from "./Components/TicketDetail/TicketDetail";
 import Calendar from "./Components/Calendar/Calendar";
-import AIInsights from "./Components/AI-insights/AIInsights"; // Keep this import from main
-import Profile from "./Components/Profile/ProfileCard"; // Keep this import from main
-import Settings from "./Components/settings/ProfileSettings"; // Keep this import from main
+import Profile from "./Components/Profile/ProfileCard";
+import Settings from "./Components/settings/ProfileSettings";
+import AIInsights from "./Components/AI-insights/AIInsights";
 
 function App() {
   const [loggedIn, setLoggedIn] = useState(false);
@@ -28,9 +28,9 @@ function App() {
           <Route path="/dashboard" Component={Dashboard} />
           <Route path="/TicketDetail" Component={TicketDetail} />
           <Route path="/Calendar" Component={Calendar} />
-          <Route path="/AIInsights" Component={AIInsights} /> {/* Resolved */}
-          <Route path="/profile" Component={Profile} /> {/* Resolved */}
-          <Route path="/settings" Component={Settings} /> {/* Resolved */}
+          <Route path="/profile" Component={Profile} /> 
+          <Route path="/settings" Component={Settings} /> 
+          <Route path="/AIInsights" Component={AIInsights} />
         </Routes>
       </BrowserRouter>
     </div>
