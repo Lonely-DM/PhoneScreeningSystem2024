@@ -23,7 +23,7 @@ const injectAuth = async (req, res, next) => {
 
     const { id } = tokenData;
 
-    const user = await User.findById(id, "email");
+    const user = await User.findById(id, ["email", "passkeyOptions"]);
 
     req.user = user;
 
