@@ -2,11 +2,17 @@ const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const _ = require("lodash");
 const { authenticator } = require("otplib");
+const { generateRegistrationOptions, verifyRegistrationResponse } = require("@simplewebauthn/server");
 
 const User = require("../Models/user.model");
+const Passkey = require("../Models/passkey.model");
 const { SESSION_COOKIE_NAME } = require("../config/constants");
 
 const { JWT_SECRET } = process.env;
+
+const rpName = "SimpleWebAuthn Example";
+const rpID = "localhost";
+const origin = `http://${rpID}:3000`;
 
 const getUsers = async (req, res) => {
   try {
@@ -101,11 +107,66 @@ const setTotp = async (req, res) => {
   return res.json({ otpAuth });
 };
 
+const getRegistrationOptions = async (req, res) => {
+  if (!req.user) return res.status(401).end();
+
+  const options = await generateRegistrationOptions({
+    rpName,
+    rpID,
+    userName: req.user.email,
+    attestationType: "none",
+    excludeCredentials: [],
+    authenticatorSelection: {
+      residentKey: "preferred",
+      userVerification: "preferred",
+    },
+  });
+
+  req.user.passkeyOptions = options;
+  await req.user.save();
+
+  return res.json(options);
+};
+
+const verifyRegistration = async (req, res) => {
+  if (!req.user) return res.status(401).end();
+
+  let verification;
+  try {
+    verification = await verifyRegistrationResponse({
+      response: req.body,
+      expectedChallenge: req.user.passkeyOptions?.challenge,
+      expectedOrigin: origin,
+      expectedRPID: rpID,
+    });
+  } catch (error) {
+    console.error(error);
+    return res.status(400).send({ error: error.message });
+  }
+
+  const { registrationInfo, verified } = verification;
+
+  const passkeyArgs = {
+    credId: registrationInfo.credentialID,
+    credPublicKey: Buffer.from(registrationInfo.credentialPublicKey).toString("base64"),
+    userId: req.user._id.toString(),
+    webAuthnUserId: req.user.passkeyOptions.user.id,
+    counter: registrationInfo.counter,
+    transports: req.body.response.transports,
+  };
+
+  await Passkey.create(passkeyArgs);
+
+  return res.json({ verified });
+};
+
 module.exports = {
+  getRegistrationOptions,
   getUsers,
   getUser,
   createUser,
   updateUser,
   deleteUser,
   setTotp,
+  verifyRegistration,
 };
