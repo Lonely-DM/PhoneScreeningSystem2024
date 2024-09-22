@@ -14,6 +14,7 @@ import Settings from "./Components/settings/ProfileSettings";
 import ClientInfo from "./Components/ClientInfo/ClientInfo";
 import AIInsights from "./Components/AI-insights/AIInsights";
 import SetupPasskey from "./Components/SetupPasskey/SetupPasskey";
+import TicketHistory from "./Components/TicketHistory/TicketHistory";
 
 function App() {
   const [loggedIn, setLoggedIn] = useState(false);
@@ -35,6 +36,7 @@ function App() {
           <Route path="/settings" Component={Settings} />
           <Route path="/clientinfo" Component={ClientInfo} />
           <Route path="/AIInsights" Component={AIInsights} />
+          <Route path="/TicketHistory" Component={TicketHistory} />
         </Routes>
       </BrowserRouter>
     </div>
