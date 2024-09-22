@@ -13,6 +13,7 @@ import Profile from "./Components/Profile/ProfileCard";
 import Settings from "./Components/settings/ProfileSettings";
 import ClientInfo from "./Components/ClientInfo/ClientInfo";
 import AIInsights from "./Components/AI-insights/AIInsights";
+import SetupPasskey from "./Components/SetupPasskey/SetupPasskey";
 
 function App() {
   const [loggedIn, setLoggedIn] = useState(false);
@@ -26,12 +27,13 @@ function App() {
           <Route exact path="/login" element={<Login setLoggedIn={setLoggedIn} setEmail={setEmail} />} />
           <Route exact path="/Signup" Component={Signup} />
           <Route exact path="/setup-mfa" Component={SetupMfa} />
+          <Route exact path="/setup-passkey" Component={SetupPasskey} />
           <Route path="/dashboard" Component={Dashboard} />
           <Route path="/TicketDetail" Component={TicketDetail} />
           <Route path="/Calendar" Component={Calendar} />
-          <Route path="/profile" Component={Profile} /> 
-          <Route path="/settings" Component={Settings} /> 
-          <Route path="/clientinfo" Component={ClientInfo} /> 
+          <Route path="/profile" Component={Profile} />
+          <Route path="/settings" Component={Settings} />
+          <Route path="/clientinfo" Component={ClientInfo} />
           <Route path="/AIInsights" Component={AIInsights} />
         </Routes>
       </BrowserRouter>

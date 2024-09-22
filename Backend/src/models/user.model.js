@@ -48,6 +48,11 @@ const UserSchema = mongoose.Schema(
       type: String,
       required: false,
     },
+
+    passkeyOptions: {
+      type: Object,
+      required: false,
+    },
   },
   {
     timestamps: true,
