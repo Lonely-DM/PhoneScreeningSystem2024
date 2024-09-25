@@ -4,19 +4,19 @@ import './Dashboard.css'; // Import your CSS file here
 import { openSidebar, closeSidebar } from './Script.js';
 import logo from '../Assets/logo.png';
 import AreaChart from './AreaChartComp.js'
-import Chatbot from './Chatbot'; 
+import Chatbot from './Chatbot';
 
 
 const Dashboard = () => {
   return (
-    <div> 
+    <div>
       <head>
         <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet" />
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet" />
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-        
-        
+
+
       </head>
       <div className="grid-container">
         {/* Header */}
@@ -40,26 +40,26 @@ const Dashboard = () => {
             <span className="material-icons-outlined" onClick={closeSidebar}>close</span>
           </div>
           <div className="logo-container">
-          <a href='/'><img src={logo} alt="SRV Logo" className="logo-img2" /></a>
+            <a href='/'><img src={logo} alt="SRV Logo" className="logo-img2" /></a>
           </div>
           <ul className="sidebar-list">
             <li className="sidebar-list-item">
               <span className="material-icons-outlined">dashboard</span> Dashboard
             </li>
             <li className="sidebar-list-item">
-            <span class="material-symbols-outlined">monitoring</span> Analytics
+              <span class="material-symbols-outlined">monitoring</span> Analytics
             </li>
             <li className="sidebar-list-item">
               <span className="material-icons-outlined">description</span> Ticket History
             </li>
             <li className="sidebar-list-item">
-            <span class="material-symbols-outlined">calendar_month</span> Calendar
+              <span class="material-symbols-outlined">calendar_month</span> Calendar
             </li>
             <li className="sidebar-list-item">
-      <Link to="/AIInsights" className="sidebar-link">
-        <span className="material-icons-outlined">description</span> AI-Insights
-    </Link>
-          </li>
+              <Link to="/AIInsights" className="sidebar-link">
+                <span className="material-icons-outlined">description</span> AI-Insights
+              </Link>
+            </li>
             <li className="sidebar-list-item">
               <span className="material-icons-outlined">settings</span> Settings
             </li>
@@ -73,36 +73,38 @@ const Dashboard = () => {
           </div>
           {/* Cards */}
           <div className="main-cards">
-             <div className="card1">
+            <div className="card1">
               <div className="card-inner">
-              <h3>Alerts</h3>
-             <span className="material-icons-outlined">notifications_active</span>
-           </div>
-           <h1>8</h1>
+                <h3>Alerts</h3>
+                <span className="material-icons-outlined">notifications_active</span>
+              </div>
+              <h1>8</h1>
             </div>
             <div className="card1">
-             <div className="card-inner">
-               <h3>User Clients</h3>
-             <span className="material-icons-outlined">groups</span>
-           </div>
-           <h1>13</h1>
-          </div>
-          <div className="card1">
-           <div className="card-inner">
-             <h3>Pending Tickets</h3>
-             <span className="material-icons-outlined">feedback</span>
-            </div>
-           <h1>17</h1>
+              <div className="card-inner">
+                <Link to="/clientinfo">
+                  <h3>User Clients</h3>
+                </Link>
+                <span className="material-icons-outlined">groups</span>
+              </div>
+              <h1>13</h1>
             </div>
             <div className="card1">
-            <div className="card-inner">
-            <h3>Phone Queue</h3>
-             <span className="material-icons-outlined">support_agent</span>
+              <div className="card-inner">
+                <h3>Pending Tickets</h3>
+                <span className="material-icons-outlined">feedback</span>
+              </div>
+              <h1>17</h1>
+            </div>
+            <div className="card1">
+              <div className="card-inner">
+                <h3>Phone Queue</h3>
+                <span className="material-icons-outlined">support_agent</span>
+              </div>
+              <h1>5</h1>
+            </div>
           </div>
-           <h1>5</h1>
-          </div>
-          </div>
-          
+
           {/* Charts */}
           <div className="charts">
             <div className="charts-card">
@@ -114,21 +116,21 @@ const Dashboard = () => {
               <div className="in-progress-tickets">
                 {[
                   { number: 97834672, description: 'Support Requested on Behalf of a Colleague', user: 'Alice_Johnson', prior: 'High' },
-                  { number: 67890216, description: 'Assistance Required for Financial Abuse', user: 'John_Smith' , prior: 'Medium'},
+                  { number: 67890216, description: 'Assistance Required for Financial Abuse', user: 'John_Smith', prior: 'Medium' },
                   { number: 89871921, description: 'Inquiry Regarding SRV Services', user: 'Emily_Davis', prior: 'Low' }
-                ].map(({ number, description, user, prior}) => (
+                ].map(({ number, description, user, prior }) => (
                   <div key={number} className="ticket-box">
                     <div className="ticket-header1">
                       <h3>SRV_{number}</h3>
                       <p className="description">{description}</p>
                       <div className="user-info">
-                      <span className="material-symbols-outlined profile-icon">account_circle</span>
-                      <span className="user-name">{user}</span>
-                      <div className="prior-level">
-                      <span className={`prior ${prior.toLowerCase()}`}>{prior} Priority</span>
-                    </div>
-                      
-                    </div>
+                        <span className="material-symbols-outlined profile-icon">account_circle</span>
+                        <span className="user-name">{user}</span>
+                        <div className="prior-level">
+                          <span className={`prior ${prior.toLowerCase()}`}>{prior} Priority</span>
+                        </div>
+
+                      </div>
                     </div>
                   </div>
                 ))}
