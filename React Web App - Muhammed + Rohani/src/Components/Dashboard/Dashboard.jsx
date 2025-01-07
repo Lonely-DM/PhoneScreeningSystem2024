@@ -82,7 +82,9 @@ const Dashboard = () => {
             </div>
             <div className="card1">
              <div className="card-inner">
-               <h3>User Clients</h3>
+                <Link to="/clientinfo">
+                  <h3>User Clients</h3>
+                </Link>
              <span className="material-icons-outlined">groups</span>
            </div>
            <h1>13</h1>
